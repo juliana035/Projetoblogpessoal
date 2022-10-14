@@ -37,8 +37,20 @@ public class Postagem {
     @ManyToOne          // criando relações de tabelas, No caso tabela postagem junto com tabela temas
     @JsonIgnoreProperties ("postagem")   // variavel estrangeira
     private Tema tema;               // No caso criamos muitos para um ManyToOne
+
+    @ManyToOne
+    @JsonIgnoreProperties("postagem")
+    private Usuario usuario;
     
     
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Tema getTema() {
 		return tema;
 	}
